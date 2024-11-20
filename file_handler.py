@@ -6,6 +6,11 @@ def file_existance_check(file_name):
     if os.path.exists(file_name):
         return True
     #create file
+    
+    
+def file_handler():
+    return None
+    
 def create_file(file_name):
     if file_existance_check(file_name):
         print("Filen finns redan.")
@@ -38,14 +43,29 @@ def delete_file(file_name):
         print("Filen finns inte.")        
                                 
 #------------Folder functions------------#
+    #gives a list of all folders in the directory
+def get_all_folder_names():
+    return os.listdir()
+
+    #function that handles the folder handling
+def folder_handler(user_input):
+    if user_input == '1':
+        create_folder()
+    elif user_input == '2':
+        open_folder()
+    return None
+    
 
     #check if folder exists
 def folder_existance_check(folder_name):
-    if os.path.exists(folder_name):
-        return True
+    folder_list = get_all_folder_names()
+    for i in folder_list:
+        if folder_name == i:
+            return True
     
     #create folder
-def create_folder(folder_name):
+def create_folder():
+    folder_name=input("Ange mappens namn: ")
     if folder_existance_check(folder_name):
         print("Mappen finns redan.")
     else:
@@ -53,10 +73,12 @@ def create_folder(folder_name):
         print("Mappen har skapats.")  
         
     #open folder   
-def open_folder(folder_name):
+def open_folder():
+    folder_name=input("Ange mappens namn: ")
     if folder_existance_check(folder_name):
         os.chdir(folder_name)
         print("Mappen har öppnats.")
+        
     else:
         print("Mappen finns inte.")
                   
