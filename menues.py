@@ -5,6 +5,7 @@ import file_handler as fh
 def Main_menu():
     loop=True
     while loop:
+       
         print("1.skapa en ny mapp \n"
               "2.öppna en mapp \n"
               "0.avsluta programmet")
@@ -16,7 +17,7 @@ def Main_menu():
             if user_input != '0':
                fh.folder_handler(user_input)
     
-            elif user_input == '0':
+            if user_input == '0':
                 print("Avslutar programmet")
                 loop=False
             break
