@@ -1,4 +1,8 @@
 import os
+
+os.chdir("safe")
+
+
 #------------File functions------------#
 
     #check if file exists
@@ -46,7 +50,9 @@ def delete_file(file_name):
 #------------Folder functions------------#
     #gives a list of all folders in the directory
 def get_all_folder_names():
-    return os.listdir()
+    all_items = os.listdir()
+    folders = [item for item in all_items if os.path.isdir(item)]
+    return folders
 
     #function that handles the folder handling
 def folder_handler(user_input):
@@ -75,6 +81,7 @@ def create_folder():
         
     #open folder   
 def open_folder():
+    print(get_all_folder_names())
     folder_name=input("Ange mappens namn: ")
     if folder_existance_check(folder_name):
         os.chdir(folder_name)

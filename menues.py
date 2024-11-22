@@ -3,8 +3,8 @@ import file_handler as fh
 
 
 def Main_menu():
-    loop=True
-    while loop:
+    
+    while True:
        
         print("1.skapa en ny mapp \n"
               "2.öppna en mapp \n"
@@ -19,8 +19,8 @@ def Main_menu():
     
             if user_input == '0':
                 print("Avslutar programmet")
-                loop=False
-            break
+                break
+            
         else:
             print("Ogiltigt val, försök igen.")
              
