@@ -13,7 +13,6 @@ def file_existance_check(file_name):
     
     
 def file_handler():
-    
     return None
     
 def create_file(file_name):
